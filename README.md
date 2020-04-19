@@ -1,15 +1,26 @@
 # bert-chinese-ner
 
+## 文件结构
+
+```
+.
+├── BERT_NER.py # 训练预测主文件
+├── bert # Google官方bert文件，可以直接从官方Github直接clone下来
+├── chinese_L-12_H-768_A-12 # Google官方预训练文件
+├── conlleval.pl
+├── data # 训练数据
+├── extract_description.py # 提取数据需要的字段
+├── output # 保存了训练的checkpoint、evaluate结果、test结果
+├── run.sh # 运行模型的bash文件
+├── tf_metrics.py # evaluate使用
+└── vocab.txt # 词典
+```
+
 ## 前言
 
 使用预训练语言模型BERT做中文NER尝试，fine - tune BERT模型
 
 PS: 移步最新[**albert fine-tune ner**](https://github.com/ProHiryu/albert-chinese-ner)模型
-
-## 代码参考
-
-- [BERT-NER](https://github.com/kyzhouhzau/BERT-NER)
-- [BERT-TF](https://github.com/google-research/bert)
 
 ## 使用方法
 
@@ -21,7 +32,30 @@ PS: 移步最新[**albert fine-tune ner**](https://github.com/ProHiryu/albert-ch
 
 train：
 
-`python BERT_NER.py --data_dir=data/ --bert_config_file=checkpoint/bert_config.json --init_checkpoint=checkpoint/bert_model.ckpt --vocab_file=vocab.txt --output_dir=./output/result_dir/`
+```
+bash run.sh
+```
+
+run.sh:
+```bash
+python BERT_NER.py \
+    --task_name=NER \
+    --do_lower_case=True \
+    --do_train=False \
+    --do_eval=True \
+    --do_predict=True \
+    --train_batch_size=32 \
+    --eval_batch_size=8 \
+    --predict_batch_size=8 \
+    --data_dir=data/ \
+    --vocab_file=vocab.txt \
+    --bert_config_file=cased_L-12_H-768_A-12/bert_config.json \
+    --init_checkpoint=cased_L-12_H-768_A-12/bert_model.ckpt \
+    --max_seq_length=128   \
+    --learning_rate=2e-5   \
+    --num_train_epochs=1.0 \
+    --output_dir=./output/result_dir/ \
+```
 
 ## 结果
 
@@ -38,3 +72,10 @@ loss = 40.160034
 测试结果第一句：
 
 ![](test.png)
+
+
+## 代码参考
+
+- [BERT-NER](https://github.com/kyzhouhzau/BERT-NER)
+- [BERT-TF](https://github.com/google-research/bert)
+- [bert-chinese-ner](https://github.com/ProHiryu/bert-chinese-ner)
