@@ -4,23 +4,21 @@
 
 ```
 .
-├── BERT_NER.py # 训练预测主文件
-├── bert # Google官方bert文件，可以直接从官方Github直接clone下来
-├── chinese_L-12_H-768_A-12 # Google官方预训练文件
+├── BERT_NER.py              # 训练预测主文件
+├── bert                     # Google官方bert文件，可以直接从官方Github直接clone下来
+├── chinese_L-12_H-768_A-12  # Google官方预训练文件
 ├── conlleval.pl
-├── data # 训练数据
-├── extract_description.py # 提取数据需要的字段
-├── output # 保存了训练的checkpoint、evaluate结果、test结果
-├── run.sh # 运行模型的bash文件
-├── tf_metrics.py # evaluate使用
-└── vocab.txt # 词典
+├── data                     # 训练数据
+├── extract_description.py   # 提取数据需要的字段
+├── output                   # 保存了训练的checkpoint、evaluate结果、test结果
+├── run.sh                   # 运行模型的bash文件
+├── tf_metrics.py            # evaluate使用
+└── vocab.txt                # 词典
 ```
 
 ## 前言
 
 使用预训练语言模型BERT做中文NER尝试，fine - tune BERT模型
-
-PS: 移步最新[**albert fine-tune ner**](https://github.com/ProHiryu/albert-chinese-ner)模型
 
 ## 使用方法
 
@@ -36,7 +34,7 @@ train：
 bash run.sh
 ```
 
-run.sh:
+run.sh中的训练命令：
 ```bash
 python BERT_NER.py \
     --task_name=NER \
@@ -79,3 +77,5 @@ loss = 40.160034
 - [BERT-NER](https://github.com/kyzhouhzau/BERT-NER)
 - [BERT-TF](https://github.com/google-research/bert)
 - [bert-chinese-ner](https://github.com/ProHiryu/bert-chinese-ner)
+
+PS: 移步最新[**albert fine-tune ner**](https://github.com/ProHiryu/albert-chinese-ner)模型
