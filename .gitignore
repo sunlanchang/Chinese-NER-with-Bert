@@ -2,6 +2,7 @@ cased*/
 chinese_*/
 data/
 output/
+bert/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
