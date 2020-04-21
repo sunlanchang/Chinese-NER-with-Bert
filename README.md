@@ -55,6 +55,16 @@ python BERT_NER.py \
     --num_train_epochs=1.0 \
     --output_dir=./output/result_dir/ \
 ```
+## 预测自己的数据
+
+预测自己的数据需要将数据构造成训练集的格式，如下所示，其中的O只是占位符的作用模拟训练集的标签，没有实际意义。
+
+```
+你 O
+好 O
+世 O
+界 O
+```
 
 ## 结果
 
