@@ -35,6 +35,7 @@ bash run.sh
 ```
 
 run.sh中的训练命令：
+
 ```bash
 python BERT_NER.py \
     --task_name=NER \
@@ -46,9 +47,9 @@ python BERT_NER.py \
     --eval_batch_size=8 \
     --predict_batch_size=8 \
     --data_dir=data/ \
-    --vocab_file=vocab.txt \
-    --bert_config_file=cased_L-12_H-768_A-12/bert_config.json \
-    --init_checkpoint=cased_L-12_H-768_A-12/bert_model.ckpt \
+    --vocab_file=chinese_L-12_H-768_A-12/vocab.txt \
+    --bert_config_file=chinese_L-12_H-768_A-12/bert_config.json \
+    --init_checkpoint=chinese_L-12_H-768_A-12/bert_model.ckpt \
     --max_seq_length=128   \
     --learning_rate=2e-5   \
     --num_train_epochs=1.0 \
