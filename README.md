@@ -20,6 +20,12 @@
 
 使用预训练语言模型BERT做中文NER尝试，fine - tune BERT模型
 
+### Install
+
+```bash
+pip install tensorflow==1.15
+```
+
 ## 使用方法
 
 从[BERT-TF](https://github.com/google-research/bert)下载bert源代码，存放在路径下bert文件夹中
