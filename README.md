@@ -5,7 +5,7 @@
 ```
 .
 ├── BERT_NER.py              # 训练预测主文件
-├── bert                     # Google官方bert文件，可以直接从官方Github直接clone下来
+├── bert                     # Google官方bert文件，git clone https://github.com/google-research/bert.git
 ├── chinese_L-12_H-768_A-12  # Google官方预训练文件
 ├── conlleval.pl
 ├── data                     # 训练数据
@@ -23,7 +23,7 @@
 ### Install
 
 ```bash
-pip install tensorflow==1.15
+pip install --user -i https://mirrors.aliyun.com/pypi/simple tensorflow==1.15
 ```
 
 ## 使用方法
